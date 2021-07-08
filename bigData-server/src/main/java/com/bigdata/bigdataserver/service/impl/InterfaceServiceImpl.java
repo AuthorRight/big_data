@@ -37,11 +37,9 @@ public class InterfaceServiceImpl implements InterfaceService {
         return  null;
     }
 
-
-
     private String getJSONString(){
         HttpHeaders headers = new HttpHeaders();
-        headers.add("user-sgent","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36");
+        headers.add("User-Agent","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36");
         HttpEntity <Resource> httpEntity =new HttpEntity<>(headers);
         String url ="https://c.m.163.com/ug/api/wuhan/app/data/list-total";
         String jsonString =restTemplate.exchange(url, HttpMethod.GET,httpEntity,String.class).getBody();

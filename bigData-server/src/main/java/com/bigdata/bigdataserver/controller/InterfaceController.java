@@ -2,7 +2,6 @@ package com.bigdata.bigdataserver.controller;
 
 import com.bigdata.bigdataserver.pojo.Chinatotal;
 import com.bigdata.bigdataserver.service.InterfaceService;
-import com.bigdata.bigdataserver.vo.ChinaTotal;
 import org.springframework.stereotype.Controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,8 +16,8 @@ public class InterfaceController {
 
     @RequestMapping("/getData")
     @ResponseBody
-    public ChinaTotal getData(){
-        return  interfaceService.queryByChinaTotal();
+    public Chinatotal getData(){
+        return interfaceService.queryByChinatotal();
     }
 
 }

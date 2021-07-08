@@ -17,7 +17,7 @@ import lombok.NoArgsConstructor;
 public class Today {
 
     private int confirm;
-    private String suspect;
+    private int suspect;
     private int heal;
     private int dead;
     private String severe;

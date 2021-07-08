@@ -17,7 +17,7 @@ import java.util.Date;
 @NoArgsConstructor
 public class Data {
 
-    private ChinaTotal chinaTotal;
+    private Chinatotal chinaTotal;
     private List<ChinaDayList> chinaDayList;
     private Date lastUpdateTime;
     private Date overseaLastUpdateTime;

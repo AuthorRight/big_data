@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
  */
 @Data
 @NoArgsConstructor
-public class ChinaTotal {
+public class Chinatotal {
 
     private Today today;
     private Total total;

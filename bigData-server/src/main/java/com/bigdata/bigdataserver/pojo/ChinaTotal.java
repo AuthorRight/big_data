@@ -3,6 +3,7 @@
   */
 package com.bigdata.bigdataserver.pojo;
 
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
@@ -11,14 +12,12 @@ import lombok.NoArgsConstructor;
  * @author bejson.com (i@bejson.com)
  * @website http://www.bejson.com/java2pojo/
  */
-@lombok.Data
+@Data
 @NoArgsConstructor
-public class RootBean {
+public class ChinaTotal {
 
-    private long reqId;
-    private int code;
-    private String msg;
-    private Data data;
-    private long timestamp;
+    private Today today;
+    private Total total;
+    private ExtData extData;
 
 }

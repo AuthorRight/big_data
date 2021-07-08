@@ -2,8 +2,10 @@
   * Copyright 2021 bejson.com 
   */
 package com.bigdata.bigdataserver.pojo;
-
+import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.Date;
 
 /**
  * Auto-generated: 2021-07-08 17:23:51
@@ -11,14 +13,13 @@ import lombok.NoArgsConstructor;
  * @author bejson.com (i@bejson.com)
  * @website http://www.bejson.com/java2pojo/
  */
-@lombok.Data
+@Data
 @NoArgsConstructor
-public class RootBean {
+public class ChinaDayList {
 
-    private long reqId;
-    private int code;
-    private String msg;
-    private Data data;
-    private long timestamp;
-
+    private Date date;
+    private Today today;
+    private Total total;
+    private String extData;
+    private String lastUpdateTime;
 }

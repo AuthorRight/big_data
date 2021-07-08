@@ -2,10 +2,11 @@
   * Copyright 2021 bejson.com 
   */
 package com.bigdata.bigdataserver.pojo;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Auto-generated: 2021-07-08 17:23:51
@@ -13,14 +14,15 @@ import java.util.Date;
  * @author bejson.com (i@bejson.com)
  * @website http://www.bejson.com/java2pojo/
  */
-@lombok.Data
+@Data
 @NoArgsConstructor
-public class Data {
+public class AreaTree {
 
-    private ChinaTotal chinaTotal;
-    private List<ChinaDayList> chinaDayList;
+    private Today today;
+    private Total total;
+    private ExtData extData;
+    private String name;
+    private String id;
     private Date lastUpdateTime;
-    private Date overseaLastUpdateTime;
-    private List<AreaTree> areaTree;
-
+    private List<String> children;
 }

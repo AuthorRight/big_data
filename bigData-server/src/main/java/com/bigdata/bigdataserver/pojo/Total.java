@@ -3,6 +3,7 @@
   */
 package com.bigdata.bigdataserver.pojo;
 
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
@@ -11,14 +12,14 @@ import lombok.NoArgsConstructor;
  * @author bejson.com (i@bejson.com)
  * @website http://www.bejson.com/java2pojo/
  */
-@lombok.Data
+@Data
 @NoArgsConstructor
-public class RootBean {
+public class Total {
 
-    private long reqId;
-    private int code;
-    private String msg;
-    private Data data;
-    private long timestamp;
-
+    private long confirm;
+    private int suspect;
+    private long heal;
+    private int dead;
+    private int severe;
+    private int input;
 }

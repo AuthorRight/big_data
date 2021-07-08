@@ -9,5 +9,5 @@ import org.apache.ibatis.annotations.Mapper;
  */
 @Mapper
 public interface ChinaTotalDao {
-    public void insert(ChinaTotal chinaTotal);
+    public void insert1(ChinaTotal chinaTotal);
 }

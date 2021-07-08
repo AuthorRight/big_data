@@ -20,6 +20,6 @@ public class ChinaTotalServiceImpl implements ChinaTotalService {
 
     @Override
     public void insert(ChinaTotal chinaTotal) {
-
+        chinaTotalDao.insert1(chinaTotal);
     }
 }

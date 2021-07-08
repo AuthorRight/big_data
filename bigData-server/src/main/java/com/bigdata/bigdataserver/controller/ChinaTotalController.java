@@ -30,6 +30,7 @@ public class ChinaTotalController {
         chinaTotal.setId(0);
         chinaTotal.setTodayConfirm(china.getToday().getConfirm());
         chinaTotal.setTodaySuspect(china.getToday().getSuspect());
+
         chinaTotalService.insert(chinaTotal);
         return chinaTotal;
     }

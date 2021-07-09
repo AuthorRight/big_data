@@ -17,9 +17,7 @@
 		<link rel="stylesheet" type="text/css" href="css/chinaMap.css"/>
 		<link rel="stylesheet" type="text/css" href="css/trend.css"/>
 		<link rel="stylesheet" type="text/css" href="css/chinaTrend.css"/>
-		<link rel="stylesheet" type="text/css" href="css/suspected.css"/>
-		<link rel="stylesheet" type="text/css" href="css/lifeDeath.css"/>
-		
+		 
 		<title>新型冠状病毒实时地图</title>
 	</head>
 	<body>
@@ -86,16 +84,11 @@
 				    </div>
 				</div>
 				
-				
-			    <ul class="trendContent">
-			        <li class="trendShow">
-			    		<!-- 境外输入新增趋势 -->
-			    		<div class="trend">
-			    			<div class="title" id="modifyTitle">境外输入新增趋势</div>
-			    			<div id="tendency"></div>
-			    		</div>
-			    	</li>
-			    </ul>
+			    <!-- 境外输入新增趋势 -->
+			    <div class="trend">
+			    	<div class="title">境外输入新增趋势</div>
+						<div id="tendency1" style="width: 720px;height: 400px;"></div>
+			    </div>
 			</div>
 			
 			
@@ -104,23 +97,47 @@
 				<div class="title">全国 总新增确诊/新增境外输入确诊 趋势</div>
 				<div id="chinaTendency"></div>
 			</div>
-			
-			<!-- 全国 现有确诊/疑似/累计确诊 趋势 -->
-			<div class="suspected">
-				<div class="title">全国 现有确诊/疑似/累计确诊 趋势</div>
-				<div id="susTendency"></div>
-			</div>
-			
-			<!-- 全国 累计治愈/死亡 趋势 -->
-			<div class="lifeDeath">
-				<div class="title">全国 累计治愈/死亡 趋势</div>
-				<div id="ldTendency"></div>
-			</div>
 		</div>
 		<script type="text/javascript">
 			$(function(){
 				getData(); 
+				 var myChart = echarts.init(document.getElementById('tendency1'));
+
+				// 指定图表的配置项和数据
+				var option={
+							xAxis: {
+								type: 'category',
+								data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+							},
+							yAxis: {
+								type: 'value'
+							},
+							series: [{
+								data: [150, 230, 224, 218, 135, 147, 260],
+								type: 'line'
+							}]
+						};
+					myChart.setOption(option);	
+				$(".trendBottom .trendLeft").click(function(){
+					$(this).addClass("trendActive");
+					$(this).siblings().removeClass("trendActive");
+					var index=$(this).index();
+					if(index == 0){
+						option.series[0].data = [150, 230, 224, 218, 135, 147, 260];
+						myChart.setOption(option);
+					}
+					if(index == 1){
+						option.series[0].data = [15, 23, 24, 21, 15, 17, 20];
+						myChart.setOption(option);
+					}
+					if(index == 2){
+						option.series[0].data = [50, 20, 24, 28, 35, 17, 60];
+						myChart.setOption(option);
+					}
+				});
+				
 			});
 		</script>
 	</body>
 </html>
+

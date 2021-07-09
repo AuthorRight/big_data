@@ -62,4 +62,10 @@ public class AreaTreeController {
 
         return null;
     }
+
+    @RequestMapping("/searchAreaTree")
+    @ResponseBody
+    public List<AreaTree> searchAreaTree() {
+        return areaTreeService.searchAreaTree();
+    }
 }

@@ -7,8 +7,10 @@ import java.util.Date;
 
 @Data
 @NoArgsConstructor
-public class ChinaTotal {
+public class ChinaDayList {
+
     private Integer id;
+    private Date date;
     private Integer todayConfirm;
     private Integer todaySuspect;
     private Integer todayHeal;
@@ -22,8 +24,6 @@ public class ChinaTotal {
     private Integer totalDead;
     private Integer totalSevere;
     private Integer totalInput;
-    private Integer extDataNoSymptom;
-    private Integer extDataIncrNoSymptom;
-    private Date date;
+    private Integer totalStoreConfirm;
 
 }

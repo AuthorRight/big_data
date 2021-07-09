@@ -1,6 +1,8 @@
 package com.bigdata.bigdataserver;
 
+import com.bigdata.bigdataserver.dao.ChinaDayListDao;
 import com.bigdata.bigdataserver.dao.ChinaTotalDao;
+import com.bigdata.bigdataserver.vo.ChinaDayList;
 import com.bigdata.bigdataserver.vo.ChinaTotal;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,11 +17,15 @@ class BigDataServerApplicationTests {
     @Autowired
     ChinaTotalDao chinaTotalDao;
 
+    @Autowired
+    ChinaDayListDao chinaDayListDao;
+
     @Test
     public void testDao() {
-        List<ChinaTotal> chinaTotalList = chinaTotalDao.queryChinaTotal();
-        System.out.println(chinaTotalList);
+        ChinaDayList chinaDayList = new ChinaDayList();
+        chinaDayList.setTodayConfirm(1);
+        chinaDayList.setTodayDead(5);
+        System.out.println(chinaDayList);
     }
-
 
 }

@@ -1,9 +1,11 @@
 package com.bigdata.bigdataserver.service.impl;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.JSONPath;
 
+import com.bigdata.bigdataserver.pojo.Chinadaylist;
 import com.bigdata.bigdataserver.pojo.Chinatotal;
 import com.bigdata.bigdataserver.service.InterfaceService;
 import com.bigdata.bigdataserver.vo.ChinaTotal;
@@ -15,6 +17,7 @@ import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.Resource;
 import javax.xml.ws.spi.http.HttpHandler;
+import java.util.List;
 
 /**
  * @Author: QK
@@ -27,12 +30,24 @@ public class InterfaceServiceImpl implements InterfaceService {
 
     @Override
     public Chinatotal queryByChinatotal() {
-        String jsonString =this.getJSONString();
-        Integer code =(Integer) JSONPath.read(jsonString,"$.code");
+        String jsonString = this.getJSONString();
+        Integer code = (Integer) JSONPath.read(jsonString,"$.code");
         if(code == 10000){
-            JSONObject chinatotalJO =(JSONObject)JSONPath.read(jsonString,"$.data.chinaTotal");
+            JSONObject chinatotalJO = (JSONObject)JSONPath.read(jsonString,"$.data.chinaTotal");
             Chinatotal chinatotal = JSON.parseObject(chinatotalJO.toString(), Chinatotal.class);
             return chinatotal;
+        }
+        return null;
+    }
+
+    @Override
+    public List<Chinadaylist> queryByChinadaylist() {
+        String jsonString = this.getJSONString();
+        Integer code = (Integer) JSONPath.read(jsonString,"$.code");
+        if(code == 10000){
+            JSONArray chinadayListJA = (JSONArray) JSONPath.read(jsonString,"$.data.chinaDayList");
+            List<Chinadaylist> chinadaylists = JSON.parseArray(chinadayListJA.toString(), Chinadaylist.class);
+            return chinadaylists;
         }
         return null;
     }

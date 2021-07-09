@@ -18,7 +18,7 @@ import java.util.Date;
 public class Data {
 
     private Chinatotal chinaTotal;
-    private List<ChinaDayList> chinaDayList;
+    private List<Chinadaylist> chinaDayList;
     private Date lastUpdateTime;
     private Date overseaLastUpdateTime;
     private List<AreaTree> areaTree;

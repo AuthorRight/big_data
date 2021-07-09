@@ -15,7 +15,7 @@ import java.util.Date;
  */
 @Data
 @NoArgsConstructor
-public class ChinaDayList {
+public class Chinadaylist {
 
     private Date date;
     private Today today;

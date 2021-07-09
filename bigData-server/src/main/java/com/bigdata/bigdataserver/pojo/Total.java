@@ -22,4 +22,5 @@ public class Total {
     private int dead;
     private int severe;
     private int input;
+    private int storeconfirm;
 }

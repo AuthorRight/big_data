@@ -6,6 +6,7 @@ import com.bigdata.bigdataserver.service.ChinaTotalService;
 import com.bigdata.bigdataserver.service.InterfaceService;
 import com.bigdata.bigdataserver.vo.ChinaTotal;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -16,6 +17,7 @@ import java.util.List;
  * @Author: QK
  * @Date: 2021/7/8 17:28
  */
+@CrossOrigin
 @Controller
 public class ChinaTotalController {
     @Resource

@@ -22,10 +22,8 @@ class BigDataServerApplicationTests {
 
     @Test
     public void testDao() {
-        ChinaDayList chinaDayList = new ChinaDayList();
-        chinaDayList.setTodayConfirm(1);
-        chinaDayList.setTodayDead(5);
-        System.out.println(chinaDayList);
+        List<ChinaDayList> chinaDayLists = chinaDayListDao.queryChinaDayList();
+        System.out.println(chinaDayLists);
     }
 
 }

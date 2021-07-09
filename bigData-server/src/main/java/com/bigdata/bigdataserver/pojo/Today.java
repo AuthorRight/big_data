@@ -20,6 +20,7 @@ public class Today {
     private int suspect;
     private int heal;
     private int dead;
-    private String severe;
-    private String storeConfirm;
+    private int severe;
+    private int storeConfirm;
+    private int input;
 }

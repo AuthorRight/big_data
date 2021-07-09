@@ -17,10 +17,9 @@ class BigDataServerApplicationTests {
 
     @Test
     public void testDao() {
-        ChinaTotal chinaTotal = new ChinaTotal();
-        chinaTotal.setTodayConfirm(5);
-        chinaTotal.setTodaySuspect(6);
-        chinaTotalDao.insert1(chinaTotal);
+        List<ChinaTotal> chinaTotalList = chinaTotalDao.queryChinaTotal();
+        System.out.println(chinaTotalList);
     }
+
 
 }

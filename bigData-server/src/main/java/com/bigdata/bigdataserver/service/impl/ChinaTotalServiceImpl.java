@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * @Author: QK
@@ -20,6 +21,11 @@ public class ChinaTotalServiceImpl implements ChinaTotalService {
 
     @Override
     public void insert(ChinaTotal chinaTotal) {
-        chinaTotalDao.insert1(chinaTotal);
+        chinaTotalDao.insert(chinaTotal);
+    }
+
+    @Override
+    public List<ChinaTotal> searchChinaTotal() {
+        return chinaTotalDao.queryChinaTotal();
     }
 }

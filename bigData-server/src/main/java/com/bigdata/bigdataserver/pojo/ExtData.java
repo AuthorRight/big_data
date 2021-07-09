@@ -15,5 +15,6 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 public class ExtData {
-
+    private int noSymptom;
+    private int incrNoSymptom;
 }

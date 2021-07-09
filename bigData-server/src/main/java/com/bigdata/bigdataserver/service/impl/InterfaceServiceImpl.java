@@ -32,9 +32,9 @@ public class InterfaceServiceImpl implements InterfaceService {
         if(code == 10000){
             JSONObject chinatotalJO =(JSONObject)JSONPath.read(jsonString,"$.data.chinaTotal");
             Chinatotal chinatotal = JSON.parseObject(chinatotalJO.toString(), Chinatotal.class);
-            return  chinatotal;
+            return chinatotal;
         }
-        return  null;
+        return null;
     }
 
     private String getJSONString(){
@@ -43,6 +43,6 @@ public class InterfaceServiceImpl implements InterfaceService {
         HttpEntity <Resource> httpEntity =new HttpEntity<>(headers);
         String url ="https://c.m.163.com/ug/api/wuhan/app/data/list-total";
         String jsonString =restTemplate.exchange(url, HttpMethod.GET,httpEntity,String.class).getBody();
-        return  jsonString;
+        return jsonString;
     }
 }

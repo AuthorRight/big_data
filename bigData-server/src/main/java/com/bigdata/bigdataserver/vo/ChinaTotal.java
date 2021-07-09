@@ -3,10 +3,13 @@ package com.bigdata.bigdataserver.vo;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Date;
+
 @Data
 @NoArgsConstructor
 public class ChinaTotal {
     private Integer id;
+
     private Integer todayConfirm;
     private Integer todaySuspect;
     private Integer todayHeal;
@@ -22,5 +25,6 @@ public class ChinaTotal {
     private Integer totalInput;
     private Integer extDataNoSymptom;
     private Integer extDataIncrNoSymptom;
+    private Date date;
 
 }

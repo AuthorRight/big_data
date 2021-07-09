@@ -16,9 +16,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Total {
 
-    private long confirm;
+    private int confirm;
     private int suspect;
-    private long heal;
+    private int heal;
     private int dead;
     private int severe;
     private int input;

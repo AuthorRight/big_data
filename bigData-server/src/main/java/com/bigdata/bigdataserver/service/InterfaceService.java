@@ -3,6 +3,7 @@ package com.bigdata.bigdataserver.service;
 
 import com.bigdata.bigdataserver.pojo.Chinadaylist;
 import com.bigdata.bigdataserver.pojo.Chinatotal;
+import com.bigdata.bigdataserver.pojo.Areatree;
 
 import java.util.List;
 
@@ -16,4 +17,7 @@ public interface InterfaceService {
 
     //查询每天的数据
     public List<Chinadaylist> queryByChinadaylist();
+
+    //查询区域数据
+    public List<Areatree> queryByAreatree();
 }

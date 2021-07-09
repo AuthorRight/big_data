@@ -16,13 +16,12 @@ import java.util.List;
  */
 @Data
 @NoArgsConstructor
-public class AreaTree {
+public class Areatree {
 
     private Today today;
     private Total total;
     private ExtData extData;
     private String name;
-    private String id;
     private Date lastUpdateTime;
-    private List<String> children;
+    private List<Children> children;
 }

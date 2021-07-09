@@ -5,6 +5,7 @@ import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.JSONPath;
 
+import com.bigdata.bigdataserver.pojo.Areatree;
 import com.bigdata.bigdataserver.pojo.Chinadaylist;
 import com.bigdata.bigdataserver.pojo.Chinatotal;
 import com.bigdata.bigdataserver.service.InterfaceService;
@@ -48,6 +49,18 @@ public class InterfaceServiceImpl implements InterfaceService {
             JSONArray chinadayListJA = (JSONArray) JSONPath.read(jsonString,"$.data.chinaDayList");
             List<Chinadaylist> chinadaylists = JSON.parseArray(chinadayListJA.toString(), Chinadaylist.class);
             return chinadaylists;
+        }
+        return null;
+    }
+
+    @Override
+    public List<Areatree> queryByAreatree() {
+        String jsonString = this.getJSONString();
+        Integer code = (Integer) JSONPath.read(jsonString,"$.code");
+        if(code == 10000){
+            JSONArray areatreeListJA = (JSONArray) JSONPath.read(jsonString,"$.data.areaTree");
+            List<Areatree> areatreelists = JSON.parseArray(areatreeListJA.toString(), Areatree.class);
+            return areatreelists;
         }
         return null;
     }

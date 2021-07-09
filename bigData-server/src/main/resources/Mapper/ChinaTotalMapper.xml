@@ -8,7 +8,8 @@
                                 total_confirm, total_suspect, total_heal, total_dead, total_severe, total_input,
                                 extData_noSymptom, extData_incrNoSymptom)
         values (#{todayConfirm}, #{todaySuspect}, #{todayHeal}, #{todayDead}, #{todaySevere}, #{todayStoreConfirm}, #{todayInput},
-                #{totalConfirm}, #{totalSuspect}, #{totalHeal}, #{totalDead}, #{totalSevere}, #{totalInput}, #{extDataNoSymptom}, #{extDataIncrNoSymptom})
+                #{totalConfirm}, #{totalSuspect}, #{totalHeal}, #{totalDead}, #{totalSevere}, #{totalInput},
+                #{extDataNoSymptom}, #{extDataIncrNoSymptom})
     </insert>
 
     <select id="queryChinaTotal" resultType="com.bigdata.bigdataserver.vo.ChinaTotal">

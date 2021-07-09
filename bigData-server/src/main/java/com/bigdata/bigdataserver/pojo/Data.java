@@ -21,6 +21,6 @@ public class Data {
     private List<Chinadaylist> chinaDayList;
     private Date lastUpdateTime;
     private Date overseaLastUpdateTime;
-    private List<AreaTree> areaTree;
+    private List<Areatree> areaTree;
 
 }

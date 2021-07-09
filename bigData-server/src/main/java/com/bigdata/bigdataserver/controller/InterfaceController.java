@@ -1,5 +1,6 @@
 package com.bigdata.bigdataserver.controller;
 
+import com.bigdata.bigdataserver.pojo.Areatree;
 import com.bigdata.bigdataserver.pojo.Chinadaylist;
 import com.bigdata.bigdataserver.pojo.Chinatotal;
 import com.bigdata.bigdataserver.service.ChinaDayListService;
@@ -29,5 +30,12 @@ public class InterfaceController {
     public List<Chinadaylist> getList() {
         List<Chinadaylist> chinadaylists = interfaceService.queryByChinadaylist();
         return chinadaylists;
+    }
+
+    @RequestMapping("/getTree")
+    @ResponseBody
+    public List<Areatree> getTree() {
+        List<Areatree> areatrees = interfaceService.queryByAreatree();
+        return areatrees;
     }
 }

@@ -16,6 +16,6 @@
         select id, today_confirm todayConfirm, today_suspect todaySuspect, today_heal todayHeal, today_dead todayDead, today_severe todaySevere, today_storeConfirm todayStoreConfirm, today_input todayInput,
                total_confirm totalConfirm, total_suspect totalSuspect, total_heal totalHeal, total_dead totalDead, total_severe totalSevere, total_input totalInput,
                extData_noSymptom extDataNoSymptom, extData_incrNoSymptom extDataIncrNoSymptom
-        from chinatotal
+        from chinatotal where id = (select max(id) from chinatotal)
     </select>
 </mapper>

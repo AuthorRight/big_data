@@ -1,9 +1,11 @@
 package com.bigdata.bigdataserver.service;
 
 
+import com.bigdata.bigdataserver.pojo.Children;
 import com.bigdata.bigdataserver.pojo.Chinadaylist;
 import com.bigdata.bigdataserver.pojo.Chinatotal;
 import com.bigdata.bigdataserver.pojo.Areatree;
+import com.bigdata.bigdataserver.vo.Province;
 
 import java.util.List;
 
@@ -20,4 +22,7 @@ public interface InterfaceService {
 
     //查询区域数据
     public List<Areatree> queryByAreatree();
+
+    //查询省份数据
+    public List<Children> queryByProvince();
 }

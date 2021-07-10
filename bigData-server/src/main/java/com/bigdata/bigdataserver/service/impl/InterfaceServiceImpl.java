@@ -6,10 +6,12 @@ import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.JSONPath;
 
 import com.bigdata.bigdataserver.pojo.Areatree;
+import com.bigdata.bigdataserver.pojo.Children;
 import com.bigdata.bigdataserver.pojo.Chinadaylist;
 import com.bigdata.bigdataserver.pojo.Chinatotal;
 import com.bigdata.bigdataserver.service.InterfaceService;
 import com.bigdata.bigdataserver.vo.ChinaTotal;
+import com.bigdata.bigdataserver.vo.Province;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -61,6 +63,18 @@ public class InterfaceServiceImpl implements InterfaceService {
             JSONArray areatreeListJA = (JSONArray) JSONPath.read(jsonString,"$.data.areaTree");
             List<Areatree> areatreelists = JSON.parseArray(areatreeListJA.toString(), Areatree.class);
             return areatreelists;
+        }
+        return null;
+    }
+
+    @Override
+    public List<Children> queryByProvince() {
+        String jsonString = this.getJSONString();
+        Integer code = (Integer) JSONPath.read(jsonString,"$.code");
+        if(code == 10000){
+            JSONArray provinceListJA = (JSONArray) JSONPath.read(jsonString,"$.data.areaTree");
+            List<Children> childrenList = JSON.parseArray(provinceListJA.toString(), Children.class);
+            return childrenList;
         }
         return null;
     }

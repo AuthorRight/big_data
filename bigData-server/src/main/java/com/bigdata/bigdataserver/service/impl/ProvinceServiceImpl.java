@@ -6,6 +6,8 @@ import com.bigdata.bigdataserver.vo.Province;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ProvinceServiceImpl implements ProvinceService {
 
@@ -15,5 +17,10 @@ public class ProvinceServiceImpl implements ProvinceService {
     @Override
     public void insert(Province province) {
         provinceDao.insert(province);
+    }
+
+    @Override
+    public List<Province> searchProvince() {
+        return provinceDao.queryProvince();
     }
 }

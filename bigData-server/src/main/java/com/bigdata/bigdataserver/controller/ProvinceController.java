@@ -58,5 +58,10 @@ public class ProvinceController {
         return null;
     }
 
+    @RequestMapping("/searchProvince")
+    @ResponseBody
+    public List<Province> searchProvince() {
+        return provinceService.searchProvince();
+    }
 
 }

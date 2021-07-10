@@ -1,10 +1,7 @@
 package com.bigdata.bigdataserver.service;
 
 
-import com.bigdata.bigdataserver.pojo.Children;
-import com.bigdata.bigdataserver.pojo.Chinadaylist;
-import com.bigdata.bigdataserver.pojo.Chinatotal;
-import com.bigdata.bigdataserver.pojo.Areatree;
+import com.bigdata.bigdataserver.pojo.*;
 import com.bigdata.bigdataserver.vo.Province;
 
 import java.util.List;
@@ -25,4 +22,7 @@ public interface InterfaceService {
 
     //查询省份数据
     public List<Children> queryByProvince();
+
+    //查询境外输入TOP10
+    public List<Jwsrtop> queryByJwsrtop();
 }

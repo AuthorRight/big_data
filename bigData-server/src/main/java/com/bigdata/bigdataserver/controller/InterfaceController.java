@@ -1,9 +1,6 @@
 package com.bigdata.bigdataserver.controller;
 
-import com.bigdata.bigdataserver.pojo.Areatree;
-import com.bigdata.bigdataserver.pojo.Children;
-import com.bigdata.bigdataserver.pojo.Chinadaylist;
-import com.bigdata.bigdataserver.pojo.Chinatotal;
+import com.bigdata.bigdataserver.pojo.*;
 import com.bigdata.bigdataserver.service.ChinaDayListService;
 import com.bigdata.bigdataserver.service.InterfaceService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,5 +42,12 @@ public class InterfaceController {
     public List<Children> getProvince() {
         List<Children> childrenList = interfaceService.queryByProvince();
         return childrenList;
+    }
+
+    @RequestMapping("/getJwsrTop")
+    @ResponseBody
+    public List<Jwsrtop> getJwsrTop() {
+        List<Jwsrtop> jwsrtopList = interfaceService.queryByJwsrtop();
+        return jwsrtopList;
     }
 }

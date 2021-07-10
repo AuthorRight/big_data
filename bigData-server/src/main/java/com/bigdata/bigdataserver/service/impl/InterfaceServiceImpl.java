@@ -5,10 +5,7 @@ import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.JSONPath;
 
-import com.bigdata.bigdataserver.pojo.Areatree;
-import com.bigdata.bigdataserver.pojo.Children;
-import com.bigdata.bigdataserver.pojo.Chinadaylist;
-import com.bigdata.bigdataserver.pojo.Chinatotal;
+import com.bigdata.bigdataserver.pojo.*;
 import com.bigdata.bigdataserver.service.InterfaceService;
 import com.bigdata.bigdataserver.vo.ChinaTotal;
 import com.bigdata.bigdataserver.vo.Province;
@@ -79,11 +76,28 @@ public class InterfaceServiceImpl implements InterfaceService {
         return null;
     }
 
+    @Override
+    public List<Jwsrtop> queryByJwsrtop() {
+        String jsonString = this.getJSONString2();
+        JSONArray jwsrtopListJA = (JSONArray) JSONPath.read(jsonString,"$.data.jwsrTop");
+        List<Jwsrtop> jwsrtopList = JSON.parseArray(jwsrtopListJA.toString(), Jwsrtop.class);
+        return jwsrtopList;
+    }
+
     private String getJSONString(){
         HttpHeaders headers = new HttpHeaders();
         headers.add("User-Agent","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36");
         HttpEntity <Resource> httpEntity =new HttpEntity<>(headers);
         String url ="https://c.m.163.com/ug/api/wuhan/app/data/list-total";
+        String jsonString =restTemplate.exchange(url, HttpMethod.GET,httpEntity,String.class).getBody();
+        return jsonString;
+    }
+
+    private String getJSONString2(){
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("User-Agent","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36");
+        HttpEntity <Resource> httpEntity =new HttpEntity<>(headers);
+        String url ="https://interface.sina.cn/news/wap/fymap2020_data.d.json";
         String jsonString =restTemplate.exchange(url, HttpMethod.GET,httpEntity,String.class).getBody();
         return jsonString;
     }

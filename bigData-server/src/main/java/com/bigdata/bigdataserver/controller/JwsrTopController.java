@@ -41,4 +41,10 @@ public class JwsrTopController {
         return null;
     }
 
+    @RequestMapping("/searchJwsrTop")
+    @ResponseBody
+    public List<JwsrTop> searchJwsrTop() {
+        return jwsrTopService.searchJwsrTop();
+    }
+
 }

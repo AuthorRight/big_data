@@ -8,4 +8,8 @@
         values (#{jwsrNum}, #{name}, #{ename})
     </insert>
 
+    <select id="queryJwsrTop" resultType="com.bigdata.bigdataserver.vo.JwsrTop">
+        select * from jwsrtop
+    </select>
+
 </mapper>
